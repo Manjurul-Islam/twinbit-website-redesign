@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Twinbit — iOS app production house</title>
+<meta name="description" content="Twinbit creates, publishes and grows its own iOS apps on the App Store, from Bangladesh, for global users. No client work.">
+<meta name="theme-color" content="#0b0a09">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css?v=1795187639">
+<script>document.documentElement.classList.replace('no-js','js');
+/* theme before first paint: saved choice, else dark (brand default) */
+(function(){try{var t=localStorage.getItem('tb-theme');}catch(e){}var d=document.documentElement;d.dataset.theme=t==='light'?'light':'dark';document.querySelector('meta[name=theme-color]').content=d.dataset.theme==='light'?'#f3eee6':'#0b0a09';
+try{if(sessionStorage.getItem('tb-pt')==='1'&&!matchMedia('(prefers-reduced-motion: reduce)').matches)d.classList.add('pt-in');sessionStorage.removeItem('tb-pt');}catch(e){}})();</script>
+</head>
+<body class="is-loading">
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ LOADER ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__half loader__half--t"></div>
+  <div class="loader__half loader__half--b"></div>
+  <div class="loader__seam"></div>
+  <div class="loader__stage">
+    <div class="loader__core">
+      <div class="loader__top"><span>Twinbit Ltd. — Dhaka</span><span>Decoding <span class="twin"><i></i><i></i></span></span></div>
+      <div class="loader__code" id="loaderCode"></div>
+      <div class="loader__bottom"><span class="loader__count" id="loaderCount">000</span><span class="loader__bar"><i id="loaderBar"></i></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="grain" aria-hidden="true"></div>
+<div class="gridlines" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__dot"></span><span class="cursor__lbl"></span></div>
+
+<!-- ============ HEADER ============ -->
+<header class="hdr" id="hdr">
+  <a class="logo" href="#top" aria-label="Twinbit home"><img class="lg-dark" src="assets/logo.png" alt="Twinbit" width="112" height="33"><img class="lg-light" src="assets/logo-dark.png" alt="" width="112" height="33"></a>
+  <nav class="nav" aria-label="Primary">
+    <a href="#apps">Apps</a>
+    <a href="#technology">Stack</a>
+    <a href="#model">Model</a>
+    <a href="#careers">Careers</a>
+    <a href="#life">Life</a>
+  </nav>
+  <div class="hdr__end">
+    <button class="theme-tg" id="themeTg" type="button" aria-label="Switch to white mode" title="Toggle theme (T)"><svg viewBox="0 0 24 24" aria-hidden="true"><mask id="tgMask"><rect x="-4" y="-4" width="32" height="32" fill="#fff"/><circle class="moon-cut" cx="17" cy="7" r="7" fill="#000"/></mask><circle class="sun-core" cx="12" cy="12" r="8" fill="currentColor" mask="url(#tgMask)"/><g class="rays" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 1.5v2.2M12 20.3v2.2M1.5 12h2.2M20.3 12h2.2M4.6 4.6l1.5 1.5M17.9 17.9l1.5 1.5M4.6 19.4l1.5-1.5M17.9 6.1l1.5-1.5"/></g></svg></button>
+    <a class="btn btn--sm btn--signal" href="contact.html"><span class="roll"><span data-t="Contact Us">Contact Us</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button>
+  </div>
+</header>
+
+<div class="mmenu" id="mmenu">
+  <nav aria-label="Mobile">
+    <a href="#apps"><small>01</small><span>Apps</span></a>
+    <a href="#technology"><small>02</small><span>Stack</span></a>
+    <a href="#model"><small>03</small><span>Model</span></a>
+    <a href="#careers"><small>04</small><span>Careers</span></a>
+    <a href="#life"><small>05</small><span>Life</span></a>
+    <a href="contact.html"><small>06</small><span>Contact</span></a>
+  </nav>
+  <div class="mmenu__foot">
+    <a class="link" href="mailto:support@twinbit.net">support@twinbit.net</a>
+  </div>
+</div>
+
+<nav class="rail" id="rail" aria-label="Sections">
+  <a href="#top"><span>Intro</span><i></i></a>
+  <a href="#about"><span>About</span><i></i></a>
+  <a href="#apps"><span>Apps</span><i></i></a>
+  <a href="#technology"><span>Stack</span><i></i></a>
+  <a href="#model"><span>Model</span><i></i></a>
+  <a href="#proof"><span>Proof</span><i></i></a>
+  <a href="#values"><span>Values</span><i></i></a>
+  <a href="#careers"><span>Careers</span><i></i></a>
+  <a href="#life"><span>Life</span><i></i></a>
+</nav>
+
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero wrap" id="top" data-sec>
+  <div class="hero__mask" aria-hidden="true"><i></i></div>
+  <div class="hero__stage">
+    <h1 class="hero__title" data-hero-title>
+      <span class="hl hl--1" data-dir="-1"><span class="ln"><span>We build</span></span></span>
+      <span class="hl hl--2" data-dir="1"><span class="ln"><span>iOS apps</span></span></span>
+      <span class="hl hl--3" data-dir="-1"><span class="ln"><span>used by</span></span></span>
+      <span class="hl hl--4" data-dir="1"><span class="ln"><span><em>millions.</em></span></span></span>
+    </h1>
+    <div class="hero__device" data-hero-phone>
+      <div class="hero__halo" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="49.6" fill="none" style="stroke:var(--line)" stroke-width=".15"/><circle class="hero__dash" cx="50" cy="50" r="41" fill="none" style="stroke:var(--line)" stroke-width=".15" stroke-dasharray=".25 1.4"/><g class="hero__orbit"><circle cx="50" cy=".4" r="1.6" fill="rgba(255,79,31,.18)"/><circle cx="50" cy=".4" r=".55" fill="#ff4f1f"/></g></svg>
+      </div>
+      <div class="hero__tilt">
+        <div class="phone">
+          <img class="phone__img" src="assets/hero-phone.webp" alt="Twinbit apps on an iPhone home screen" width="900" height="1863" fetchpriority="high">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero__bar">
+    <p class="lead hero__sub" data-hero-fade>Twinbit creates, publishes and grows its own apps on the App Store. Built in Bangladesh, used worldwide.</p>
+    <div class="hero__meta label" data-hero-fade><span class="twin"><i></i><i></i></span>5 live apps · 40K+ ratings</div>
+    <div class="hero__ctas" data-hero-fade>
+      <a class="btn" href="#apps"><span class="roll"><span data-t="Explore Our Apps">Explore Our Apps</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+      <a class="btn btn--ghost" href="#careers"><span class="roll"><span data-t="Join The Team">Join The Team</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marq" aria-hidden="true">
+  <div class="marq__track" id="marq">
+    <div class="marq__item"><img src="assets/apps/ringtone-maker-garage.webp" alt="">Ringtone Maker<span class="twin"><i></i><i></i></span><img src="assets/apps/live-wallpaper-maker-4k.webp" alt="">Live Wallpaper<span class="twin"><i></i><i></i></span><img src="assets/apps/video-editor-make-music-video.webp" alt="">Video Editor<span class="twin"><i></i><i></i></span><img src="assets/apps/equalizer-fx-bass-booster.webp" alt="">Equalizer<span class="twin"><i></i><i></i></span><img src="assets/apps/photo-editor-filters.webp" alt="">Photo Editor<span class="twin"><i></i><i></i></span></div>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="about sec wrap" id="about" data-sec>
+  <div class="grid">
+    <div class="about__label sec-label"><span class="idx">[01]</span> Who we are</div>
+    <p class="about__text" data-words>We don’t take briefs. We make bets. Every Twinbit app is researched, designed, shipped and grown in-house by one team — for people who <em>keep it</em> on their iPhone.</p>
+    <div class="about__aside fade">
+      <span class="twin twin--signal"><i></i><i></i></span>
+      <p class="muted">An in-house iOS app production house in Mirpur DOHS, Dhaka. No agency model, no client tickets: the people who build a feature also own how it performs.</p>
+    </div>
+    <div class="about__card card fade"><div class="in">
+      <span class="label">Operating rule</span>
+      <p class="h3">Own the <em>outcome,</em> not the ticket.</p>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ APPS ============ -->
+<section class="apps" id="apps" data-sec>
+  <div class="sec-head sec-head-m wrap">
+    <div class="sec-label"><span class="idx">[02]</span> Our products</div>
+    <h2 class="d2">Apps people <em>keep</em> on their iPhone.</h2>
+  </div>
+  <div class="apps__pin" id="appsPin">
+    <div class="apps__intro">
+        <div class="sec-label"><span class="idx">[02]</span> Our products</div>
+        <h2 class="d2" data-split>Apps people <em>keep</em> on their iPhone.</h2>
+        <p class="muted" style="max-width:36ch">Live on the App Store. Every one researched, designed, shipped and grown by a single team.</p>
+        <div>
+          <div class="apps__count"><b id="appsIdx">01</b> / 05</div>
+        </div>
+      </div>
+    <div class="apps__view">
+    <div class="apps__track" id="appsTrack">
+
+      <article class="app card" style="--tint:#ff3d8b"><div class="in">
+        <div class="app__glow"></div>
+        <span class="app__idx" aria-hidden="true">01</span>
+        <div class="app__top"><span class="label">01 — Music</span></div>
+        <div class="app__icon"><img src="assets/apps/ringtone-maker-garage.webp" alt="Ringtone Maker Garage icon" width="512" height="512" loading="lazy"></div>
+        <div><h3 class="app__name">Ringtone Maker Garage</h3><p class="app__sub">Custom ringtones for iPhone</p></div>
+        <div class="app__tags"><span>Design</span><span>iOS</span><span>Content</span><span>ASO</span></div>
+        <div class="app__foot">
+          <div class="rating" aria-label="Rated 4.5 out of 5 from 7K ratings"><span class="rating__num">4.5<i>★</i></span><span class="rating__meta">7K ratings</span></div>
+          <a class="btn btn--sm" href="https://apps.apple.com/app/id1537772169" target="_blank" rel="noopener"><span class="roll"><span data-t="App Store">App Store</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+        </div>
+      </div></article>
+      <article class="app card" style="--tint:#f5c84a"><div class="in">
+        <div class="app__glow"></div>
+        <span class="app__idx" aria-hidden="true">02</span>
+        <div class="app__top"><span class="label">02 — Lifestyle</span></div>
+        <div class="app__icon"><img src="assets/apps/live-wallpaper-maker-4k.webp" alt="Live Wallpaper Maker 4K icon" width="512" height="512" loading="lazy"></div>
+        <div><h3 class="app__name">Live Wallpaper Maker 4K</h3><p class="app__sub">Themes &amp; wallpapers for iPhone</p></div>
+        <div class="app__tags"><span>Design</span><span>iOS</span><span>Content</span><span>ASO</span></div>
+        <div class="app__foot">
+          <div class="rating" aria-label="Rated 4.7 out of 5 from 2.7K ratings"><span class="rating__num">4.7<i>★</i></span><span class="rating__meta">2.7K ratings</span></div>
+          <a class="btn btn--sm" href="https://apps.apple.com/app/id1492247394" target="_blank" rel="noopener"><span class="roll"><span data-t="App Store">App Store</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+        </div>
+      </div></article>
+      <article class="app card" style="--tint:#ff2f6d"><div class="in">
+        <div class="app__glow"></div>
+        <span class="app__idx" aria-hidden="true">03</span>
+        <div class="app__top"><span class="label">03 — Photo &amp; Video</span></div>
+        <div class="app__icon"><img src="assets/apps/video-editor-make-music-video.webp" alt="Video Editor: Make Music Video icon" width="512" height="512" loading="lazy"></div>
+        <div><h3 class="app__name">Video Editor: Make Music Video</h3><p class="app__sub">Edit, cut &amp; add songs to video</p></div>
+        <div class="app__tags"><span>iOS</span><span>Design</span><span>Data</span><span>QA</span></div>
+        <div class="app__foot">
+          <div class="rating" aria-label="Rated 4.4 out of 5 from 1.6K ratings"><span class="rating__num">4.4<i>★</i></span><span class="rating__meta">1.6K ratings</span></div>
+          <a class="btn btn--sm" href="https://apps.apple.com/app/id1234142907" target="_blank" rel="noopener"><span class="roll"><span data-t="App Store">App Store</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+        </div>
+      </div></article>
+      <article class="app card" style="--tint:#19c6ff"><div class="in">
+        <div class="app__glow"></div>
+        <span class="app__idx" aria-hidden="true">04</span>
+        <div class="app__top"><span class="label">04 — Music</span></div>
+        <div class="app__icon"><img src="assets/apps/equalizer-fx-bass-booster.webp" alt="Equalizer Fx: Bass Booster icon" width="512" height="512" loading="lazy"></div>
+        <div><h3 class="app__name">Equalizer Fx: Bass Booster</h3><p class="app__sub">Speaker sound, headphone volume</p></div>
+        <div class="app__tags"><span>Design</span><span>iOS</span><span>Data</span><span>ASO</span></div>
+        <div class="app__foot">
+          <div class="rating" aria-label="Rated 4.2 out of 5 from 28K ratings"><span class="rating__num">4.2<i>★</i></span><span class="rating__meta">28K ratings</span></div>
+          <a class="btn btn--sm" href="https://apps.apple.com/app/id1084228340" target="_blank" rel="noopener"><span class="roll"><span data-t="App Store">App Store</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+        </div>
+      </div></article>
+      <article class="app card" style="--tint:#b347ff"><div class="in">
+        <div class="app__glow"></div>
+        <span class="app__idx" aria-hidden="true">05</span>
+        <div class="app__top"><span class="label">05 — Photo &amp; Video</span></div>
+        <div class="app__icon"><img src="assets/apps/photo-editor-filters.webp" alt="Photo Editor &amp; Filters icon" width="512" height="512" loading="lazy"></div>
+        <div><h3 class="app__name">Photo Editor &amp; Filters</h3><p class="app__sub">Splash, crop &amp; picture effects</p></div>
+        <div class="app__tags"><span>Design</span><span>iOS</span><span>QA</span><span>ASO</span></div>
+        <div class="app__foot">
+          <div class="rating" aria-label="Rated 4.4 out of 5 from 1.9K ratings"><span class="rating__num">4.4<i>★</i></span><span class="rating__meta">1.9K ratings</span></div>
+          <a class="btn btn--sm" href="https://apps.apple.com/app/id1086993088" target="_blank" rel="noopener"><span class="roll"><span data-t="App Store">App Store</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+        </div>
+      </div></article>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TECHNOLOGY ============ -->
+<section class="tech sec wrap" id="technology" data-sec>
+  <div class="sec-head">
+    <div class="sec-label"><span class="idx">[03]</span> Technology</div>
+    <h2 class="d2" data-split>One <em>in-house</em> stack behind every app.</h2>
+    <p class="lead fade">AI, media processing, scalable APIs and automation, tuned for millions of users.</p>
+  </div>
+  <div class="tech__wrap">
+    <div class="tech__list" role="tablist" aria-label="Technologies" id="techList">
+      <button class="tech__item is-on" role="tab" aria-selected="true" data-i="0"><span class="n">01</span><span class="t">AI Image Processing</span><span class="twin"><i></i><i></i></span><span class="pg"></span></button>
+      <button class="tech__item" role="tab" aria-selected="false" data-i="1"><span class="n">02</span><span class="t">Smart Video Tools</span><span class="twin"><i></i><i></i></span><span class="pg"></span></button>
+      <button class="tech__item" role="tab" aria-selected="false" data-i="2"><span class="n">03</span><span class="t">Scalable API Systems</span><span class="twin"><i></i><i></i></span><span class="pg"></span></button>
+      <button class="tech__item" role="tab" aria-selected="false" data-i="3"><span class="n">04</span><span class="t">App Store Product Engineering</span><span class="twin"><i></i><i></i></span><span class="pg"></span></button>
+      <button class="tech__item" role="tab" aria-selected="false" data-i="4"><span class="n">05</span><span class="t">Automation &amp; Personalization</span><span class="twin"><i></i><i></i></span><span class="pg"></span></button>
+      <button class="tech__item" role="tab" aria-selected="false" data-i="5"><span class="n">06</span><span class="t">Cloud-Ready Infrastructure</span><span class="twin"><i></i><i></i></span><span class="pg"></span></button>
+    </div>
+    <div class="tech__panel card fade" role="tabpanel" id="techPanel"><div class="in">
+      <div class="tech__panel-top"><div class="bignum" id="techNum">01</div><span class="label" id="techTab">01 / 06</span></div>
+      <h3 class="h3" id="techTitle">AI Image Processing</h3>
+      <p class="muted" id="techDesc">Enhance, restore, edit and transform images with visual processing built for mobile-first experiences.</p>
+      <span class="label tech__tag" id="techTag">Used in — Photo Editor, Wallpaper 4K</span>
+    </div></div>
+  </div>
+</section>
+
+<!-- ============ MODEL (dial) ============ -->
+<section class="model" id="model" data-sec>
+  <div class="model__stage">
+    <div class="model__copy">
+      <div class="sec-label"><span class="idx">[04]</span> Why Twinbit is different</div>
+      <h2 class="d2" data-split>We don’t build for external <em>clients.</em></h2>
+      <p class="lead">Every app is our own bet. Same team, full loop, then again.</p>
+      <div class="model__pills" id="modelPills"><span>Research</span><span>Design</span><span>Build</span><span>Publish</span><span>Analyze</span><span>Improve</span></div>
+    </div>
+    <div class="model__dialbox">
+      <div class="dial" id="dial">
+        <svg viewBox="0 0 100 100" aria-hidden="true">
+          <circle cx="50" cy="50" r="40" fill="none" style="stroke:var(--line-2)" stroke-width=".25"/>
+          <circle cx="50" cy="50" r="46" fill="none" style="stroke:var(--line)" stroke-width=".25" stroke-dasharray=".3 1.6"/>
+          <circle id="dialArc" cx="50" cy="50" r="40" fill="none" stroke="#ff4f1f" stroke-width=".5" stroke-dasharray="251.3" stroke-dashoffset="251.3" transform="rotate(-90 50 50)"/>
+        </svg>
+        <div class="dial__ring" id="dialRing"></div>
+        <span class="dial__arrow">▼</span>
+        <div class="dial__center">
+          <span class="label" id="dialIdx">01 / 06</span>
+          <span class="dial__step" id="dialStep">Research</span>
+          <span class="dial__desc" id="dialDesc">Read App Store demand before writing a line of code.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section class="proof sec wrap" id="proof" data-sec>
+  <div class="sec-head">
+    <div class="sec-label"><span class="idx">[05]</span> Proof</div>
+    <h2 class="d2" data-split>Real people, real <em>ratings.</em></h2>
+    <p class="lead fade">Only verified figures are shown.</p>
+  </div>
+  <div class="proof__stats">
+    <div class="pstat fade"><span class="pstat__k label"><span>01</span>Ratings</span><div class="pstat__num"><span data-count="40">0</span>K<em class="gl" aria-label="plus"><svg viewBox="0 0 20 20"><path d="M10 1v18M1 10h18" stroke="currentColor" stroke-width="3.2" fill="none"/></svg></em></div><p class="pstat__d">App Store ratings across our apps</p></div>
+    <div class="pstat fade"><span class="pstat__k label"><span>02</span>Top rating</span><div class="pstat__num"><span data-count="4.6" data-dec="1">0</span><em class="gl" aria-label="stars"><svg viewBox="0 0 20 20"><path d="M10 .8l2.75 6.2 6.75.62-5.1 4.48 1.5 6.6L10 15.3 4.1 18.7l1.5-6.6L.5 7.62 7.25 7z" fill="currentColor"/></svg></em></div><p class="pstat__d">Highest-rated Twinbit app</p></div>
+    <i class="proof__rule" aria-hidden="true"></i>
+    <div class="pstat fade"><span class="pstat__k label"><span>03</span>Live apps</span><div class="pstat__num"><span data-count="5" data-pad="2">0</span></div><p class="pstat__d">iOS apps, all built in-house</p></div>
+    <div class="pstat fade"><span class="pstat__k label"><span>04</span>Client work</span><div class="pstat__num"><span data-count="0" data-pad="2">00</span></div><p class="pstat__d">External client projects. By design.</p></div>
+  </div>
+  <div class="voice">
+    <div class="voice__side fade">
+      <span class="label">What users say</span>
+      <div class="voice__ctrl">
+        <button class="voice__btn ic-o" id="vPrev" aria-label="Previous review"><svg viewBox="0 0 14 14"><path d="M12 7H2M6 3 2 7l4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+        <button class="voice__btn ic-o" id="vNext" aria-label="Next review"><svg viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+        <span class="voice__count"><b id="vIdx">01</b> / 06</span>
+      </div>
+      <div class="voice__prog"><i id="vProg"></i></div>
+    </div>
+    <figure class="voice__main fade"><i class="voice__cover" aria-hidden="true"></i>
+      <blockquote class="voice__q" id="vQ" aria-live="polite"></blockquote>
+      <figcaption class="voice__by"><span class="stars" aria-label="5 stars">★★★★★</span><span class="label label--bone" id="vBy"></span><span class="label">Verified App Store review</span></figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ VALUES ============ -->
+<section class="values sec wrap" id="values" data-sec>
+  <div class="sec-head">
+    <div class="sec-label"><span class="idx">[06]</span> How we work</div>
+    <h2 class="d2" data-split>Six rules, no <em>exceptions.</em></h2>
+    <p class="lead fade">A small, focused crew working to a high bar.</p>
+  </div>
+  <div class="values__list">
+    <div class="val fade"><span class="n">01</span><span class="t"><span><span class="a">Data-driven</span><span class="b">Data-driven</span></span></span><p class="d">We decide with numbers, from research demand to release metrics.</p></div>
+    <div class="val fade"><span class="n">02</span><span class="t"><span><span class="a">Ownership</span><span class="b">Ownership</span></span></span><p class="d">You ship features and own their outcomes, not tickets.</p></div>
+    <div class="val fade"><span class="n">03</span><span class="t"><span><span class="a">Ambition</span><span class="b">Ambition</span></span></span><p class="d">We aim for products millions choose to keep.</p></div>
+    <div class="val fade"><span class="n">04</span><span class="t"><span><span class="a">Quality</span><span class="b">Quality</span></span></span><p class="d">A high bar on every detail that reaches the user.</p></div>
+    <div class="val fade"><span class="n">05</span><span class="t"><span><span class="a">Creativity</span><span class="b">Creativity</span></span></span><p class="d">New categories and ideas start from inside the team.</p></div>
+    <div class="val fade"><span class="n">06</span><span class="t"><span><span class="a">Challenge</span><span class="b">Challenge</span></span></span><p class="d">Hard problems, solved by a small focused crew.</p></div>
+  </div>
+</section>
+
+<!-- ============ CAREERS ============ -->
+<section class="careers sec wrap" id="careers" data-sec>
+  <div class="careers__grid">
+    <div class="careers__head">
+      <div class="sec-label"><span class="idx">[07]</span> Careers</div>
+      <h2 class="d1" data-split>Build <em>products,</em> not client tickets.</h2>
+    </div>
+    <div class="careers__side fade">
+      <span class="label">Teams hiring across</span>
+      <div class="chips">
+        <a class="chip" href="careers.html#roles">iOS</a><a class="chip" href="careers.html#roles">Data</a><a class="chip" href="careers.html#roles">Design</a><a class="chip" href="careers.html#roles">ASO</a><a class="chip" href="careers.html#roles">QA</a><a class="chip" href="careers.html#roles">Product</a><a class="chip" href="careers.html#roles">Backend / API</a>
+      </div>
+      <a class="btn" href="careers.html#roles"><span class="roll"><span data-t="See Open Positions">See Open Positions</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+    </div>
+    <div class="perks">
+      <div class="perk fade"><span class="twin"><i></i><i></i></span>Weekly holidays</div>
+      <div class="perk fade"><span class="twin"><i></i><i></i></span>Lunch &amp; snacks</div>
+      <div class="perk fade"><span class="twin"><i></i><i></i></span>Festival bonuses</div>
+      <div class="perk fade"><span class="twin"><i></i><i></i></span>Salary review</div>
+      <div class="perk fade"><span class="twin"><i></i><i></i></span>Recreation</div>
+      <div class="perk fade"><span class="twin"><i></i><i></i></span>Annual tour</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LIFE ============ -->
+<section class="life sec wrap" id="life" data-sec>
+  <div class="sec-head">
+    <div class="sec-label"><span class="idx">[08]</span> Life at Twinbit</div>
+    <h2 class="d2" data-split>The <em>crew</em> behind the code.</h2>
+    <p class="lead fade">Mirpur DOHS, Dhaka. Celebrations, long whiteboard sessions, Friday football.</p>
+  </div>
+  <div class="gal" id="gal" data-cursor-root>
+    <div class="gal__grid" id="galGrid"></div>
+    <div class="gal__bar">
+      <span class="label"><b id="galCount">00</b> photos · tap any photo for full view</span>
+      <button class="btn btn--ghost btn--sm" id="galMore" hidden><span class="roll"><span data-t="Show All Photos">Show All Photos</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<section class="cta wrap" id="cta">
+  <div class="cta__inner">
+    <div class="sec-label" style="grid-column:1/-1"><span class="idx">[09]</span> Next</div>
+    <h2 class="d1" data-split>Ready to build the next app <em>millions</em> will use?</h2>
+    <div class="cta__row">
+      <p class="lead fade" style="max-width:34ch">Send your resume. If you like owning outcomes, you’ll like it here.</p>
+      <div class="cta__btns fade">
+        <a class="btn" href="careers.html#roles"><span class="roll"><span data-t="View Open Roles">View Open Roles</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+        <a class="btn btn--ghost" href="mailto:career.twinbit@gmail.com"><span class="roll"><span data-t="Send Resume">Send Resume</span></span><span class="ic"><svg viewBox="0 0 14 14"><path d="M3 11 11 3M5 3h6v6" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="ftr wrap">
+  <div class="ftr__grid">
+    <div class="ftr__brand">
+      <a class="logo" href="#top" aria-label="Twinbit home"><img class="lg-dark" src="assets/logo.png" alt="Twinbit" width="112" height="33"><img class="lg-light" src="assets/logo-dark.png" alt="" width="112" height="33"></a>
+      <p class="muted" style="max-width:34ch">An in-house iOS app production house. We build products people keep on their iPhone.</p>
+      <div class="socials">
+        <a href="https://www.facebook.com/twinbitltd" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.3V10H7v4h3v8h4v-8h3l1-4h-4V8.6c0-.4.3-.6 1-.6Z"/></svg></a>
+        <a href="https://www.linkedin.com/company/twinbit-limited" aria-label="LinkedIn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 9h4v12H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4Zm4 6h3.8v1.7c.6-1 1.9-2 3.9-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3-1.9-3s-2.1 1.4-2.1 2.9V21h-4Z"/></svg></a>
+        <a href="https://x.com/twinbitlimited" aria-label="X" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8Zm-1.1 16.2h1.7L7.4 4.7H5.6Z"/></svg></a>
+        <a href="https://www.instagram.com/twinbitlimited" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a>
+      </div>
+    </div>
+    <div class="ftr__col"><h4 class="label">Apps</h4><a href="https://apps.apple.com/app/id1537772169">Ringtone Maker Garage</a><a href="https://apps.apple.com/app/id1492247394">Live Wallpaper 4K</a><a href="https://apps.apple.com/app/id1234142907">Video Editor</a><a href="https://twinbit.net/apps">All apps</a></div>
+    <div class="ftr__col"><h4 class="label">Company</h4><a href="https://twinbit.net/company">About</a><a href="https://twinbit.net/company#values">Values</a><a href="https://twinbit.net/company#operating-model">Operating model</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></div>
+    <div class="ftr__col ftr__col--stack"><div class="ftr__sub"><h4 class="label">Office</h4><address>House 715, Road 11, Avenue 3, Mirpur DOHS, Dhaka 1216, Bangladesh</address></div><div class="ftr__sub"><h4 class="label">Contact</h4><a href="tel:+8801727851518">+880 1727 851518</a><a href="tel:+8801303560248">+880 1303 560248</a></div></div>
+  </div>
+  <div class="ftr__lower">
+    <div class="ftr__sign">
+      <span class="label">Say hello</span>
+      <a class="ftr__mail" href="mailto:support@twinbit.net"><span>support<em class="at">@</em>twinbit.net</span></a>
+      <a class="ftr__top ic-o" href="#top" aria-label="Back to top"><svg viewBox="0 0 14 14"><path d="M7 12V2M3 6l4-4 4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></a>
+    </div>
+    <div class="ftr__bottom">
+      <p>© 2026 Twinbit Limited</p>
+      <p class="ftr__clock">Dhaka <span id="clock2">--:--</span> · GMT+6<span class="pulse"></span></p>
+      <p class="ftr__legal-links"><a href="https://twinbit.net/privacy-policy">Privacy</a><a href="https://twinbit.net/terms">Terms</a></p>
+    </div>
+    <p class="ftr__legal">Apple, the Apple logo, iPhone, iPad and App Store are trademarks of Apple Inc., registered in the U.S. and other countries and regions. App Store is a service mark of Apple Inc.</p>
+  </div>
+</footer>
+
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <div class="viewer__top">
+    <span class="label"><b id="vwIdx">01</b> / <span id="vwTotal">03</span></span>
+    <span class="label label--bone" id="vwCap"></span>
+    <button class="viewer__close ic-o" id="vwClose" aria-label="Close viewer"><svg viewBox="0 0 14 14"><path d="M3 3l8 8M11 3l-8 8" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+  </div>
+  <div class="viewer__stage" id="vwStage">
+    <button class="viewer__nav viewer__nav--prev ic-o" id="vwPrev" aria-label="Previous photo"><svg viewBox="0 0 14 14"><path d="M12 7H2M6 3 2 7l4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+    <figure class="viewer__fig"><img id="vwImg" alt=""></figure>
+    <button class="viewer__nav viewer__nav--next ic-o" id="vwNext" aria-label="Next photo"><svg viewBox="0 0 14 14"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none"/></svg></button>
+  </div>
+  <div class="viewer__thumbs" id="vwThumbs"></div>
+</div>
+
+<script src="assets/pt.js?v=1795187639"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="hero-trail.js?v=1795187639"></script>
+<script src="assets/life/gallery.js?v=1795187639"></script>
+<script src="assets/logo-letters.js?v=1795187639"></script>
+<script src="app.js?v=1795187639"></script>
+</body>
+</html>
