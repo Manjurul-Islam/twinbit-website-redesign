@@ -226,11 +226,19 @@
 
   /* ---------- mobile menu ---------- */
   const burger = $('#burger');
-  function closeMenu() { document.body.classList.remove('menu-open'); burger.setAttribute('aria-expanded', 'false'); lenis && lenis.start(); }
-  burger.addEventListener('click', () => {
-    const open = !document.body.classList.contains('menu-open');
-    document.body.classList.toggle('menu-open', open); burger.setAttribute('aria-expanded', String(open));
+  let menuT = 0;
+  function setMenu(open) {
+    const b = document.body; if (open === b.classList.contains('menu-open')) return;
+    clearTimeout(menuT);
+    b.classList.toggle('menu-open', open); b.classList.toggle('menu-closing', !open);
+    if (!open) menuT = setTimeout(() => b.classList.remove('menu-closing'), 1250); // links exit, panel wipes up, then reset
+    burger && burger.setAttribute('aria-expanded', String(open));
     if (lenis) open ? lenis.stop() : lenis.start();
+  }
+  function closeMenu() { setMenu(false); }
+  burger && burger.addEventListener('click', () => {
+    const open = !document.body.classList.contains('menu-open');
+    setMenu(open);
   });
   addEventListener('keydown', e => { if (e.key === 'Escape') { closeMenu(); closeLb(); } });
 

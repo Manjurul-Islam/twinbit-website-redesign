@@ -220,15 +220,20 @@ a:hover>.ic-o::before,button:hover>.ic-o::before,.ic-o:hover::before{transform:t
 .menu-open .burger i:nth-child(1){top:22.5px;transform:rotate(45deg)}
 .menu-open .burger i:nth-child(2){top:22.5px;transform:rotate(-45deg)}
 
-.mmenu{position:fixed;inset:0;z-index:70;background:var(--ink);clip-path:inset(0 0 100% 0);transition:clip-path 1s var(--e-wipe);display:flex;flex-direction:column;justify-content:space-between;padding:110px var(--mx) 32px;visibility:hidden}
-.menu-open .mmenu{clip-path:inset(0 0 0 0);visibility:visible}
+.mmenu{position:fixed;inset:0;z-index:70;background:var(--ink);clip-path:inset(0 0 100% 0);display:flex;flex-direction:column;justify-content:space-between;padding:110px var(--mx) 32px;visibility:hidden;
+  transition:clip-path .9s var(--e-wipe) .28s,visibility 0s linear 1.2s} /* close: links leave first, then the panel wipes up, then it hides */
+.menu-open .mmenu{clip-path:inset(0 0 0 0);visibility:visible;transition:clip-path 1s var(--e-wipe),visibility 0s}
 .mmenu nav a{display:flex;align-items:baseline;gap:16px;padding:10px 0;border-bottom:1px solid var(--line);font:500 clamp(40px,11vw,64px)/1 var(--f-sans);letter-spacing:-.045em;overflow:hidden}
-.mmenu nav a span{display:block;transform:translateY(105%);transition:transform .9s var(--e-out)}
+.mmenu nav a span,.mmenu nav a small{display:block;transform:translateY(105%);transition:none}
 .mmenu nav a small{font:500 11px var(--f-mono);color:var(--signal);letter-spacing:.06em}
-.menu-open .mmenu nav a span{transform:none}
-.menu-open .mmenu nav a:nth-child(2) span{transition-delay:.06s}.menu-open .mmenu nav a:nth-child(3) span{transition-delay:.12s}
-.menu-open .mmenu nav a:nth-child(4) span{transition-delay:.18s}.menu-open .mmenu nav a:nth-child(5) span{transition-delay:.24s}
-.mmenu nav a:first-child span{transition-delay:.0s}
+.mmenu__foot{opacity:0;transform:translateY(12px)}
+/* open: rise in, staggered */
+.menu-open .mmenu nav a span,.menu-open .mmenu nav a small{transform:none;transition:transform .9s var(--e-out) calc(.28s + var(--i,0) * .06s)}
+.menu-open .mmenu__foot{opacity:1;transform:none;transition:opacity .8s var(--e-ui) .55s,transform .9s var(--e-out) .55s}
+/* close: rise out upward, reverse stagger, before the wipe */
+.menu-closing .mmenu nav a span,.menu-closing .mmenu nav a small{transform:translateY(-105%);transition:transform .5s cubic-bezier(.7,0,.84,0) calc((5 - var(--i,0)) * .035s)}
+.menu-closing .mmenu__foot{opacity:0;transform:translateY(-8px);transition:opacity .35s var(--e-ui),transform .45s var(--e-ui)}
+.mmenu nav a:nth-child(1){--i:0}.mmenu nav a:nth-child(2){--i:1}.mmenu nav a:nth-child(3){--i:2}.mmenu nav a:nth-child(4){--i:3}.mmenu nav a:nth-child(5){--i:4}.mmenu nav a:nth-child(6){--i:5}
 .mmenu__foot{display:flex;flex-direction:column;gap:18px}
 
 /* side rail (section index) */
@@ -369,7 +374,7 @@ main,.ftr,.marq{position:relative;z-index:1}
 .model{height:320vh;--dial:min(560px,44vw);margin-block:calc(var(--sec) - (100svh - var(--dial)) / 2)}
 .model__stage{position:sticky;top:0;height:100svh;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:var(--gut);align-items:center;padding-inline:var(--mx);overflow:hidden}
 .model__copy{grid-column:1/6;display:flex;flex-direction:column;gap:26px}
-.model__dialbox{grid-column:7/13;justify-self:center;position:relative;width:var(--dial);aspect-ratio:1;margin-left:var(--gut)}
+.model__dialbox{grid-column:7/13;justify-self:center;position:relative;width:var(--dial);aspect-ratio:1;margin-left:var(--gut);translate:.5px 0}
 .dial{position:absolute;inset:0}
 .dial svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .dial__ring{will-change:transform;position:absolute;inset:0}
@@ -568,7 +573,7 @@ main,.ftr,.marq{position:relative;z-index:1}
   .model{margin-block:0}
   .model__copy{grid-column:1/-1;align-self:end;padding-top:90px}
   .model__stage{grid-template-rows:auto 1fr;align-items:start;row-gap:24px}
-  .model__dialbox{grid-column:1/-1;width:min(460px,78vw,52svh);align-self:start;margin-left:0}
+  .model__dialbox{grid-column:1/-1;width:min(460px,78vw,52svh);align-self:start;margin-left:0;translate:calc(var(--gut) / 2 + .5px) 0} /* stacked: dial centre + arrow sit on the page's centre grid line */
   .model__copy .lead{display:none}
   .proof__stats{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:0}
   .proof__rule{display:block;grid-column:1/-1;height:1px;background:var(--line)} /* one static rule spanning the gutter — never splits during the cell reveal */

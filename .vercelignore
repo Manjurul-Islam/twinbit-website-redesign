@@ -1,0 +1,8 @@
+assets/ref/
+docs/
+tools/
+README.md
+LICENSE
+THIRD-PARTY-NOTICES.md
+*.py
+.DS_Store

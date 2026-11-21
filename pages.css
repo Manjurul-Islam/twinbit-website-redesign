@@ -192,9 +192,9 @@
 .hq__rows>div{display:flex;flex-direction:column;gap:12px;padding-top:20px}
 .hq__rows b{font:500 clamp(22px,1.8vw,30px)/1 var(--f-sans);letter-spacing:-.02em;font-variant-numeric:tabular-nums}
 .hq__btns{display:flex;flex-wrap:wrap;gap:10px}
-.hq__map{grid-column:7/13;position:relative;aspect-ratio:1/.86;overflow:hidden}
+.hq__map{--cx:calc(50% + var(--gut) / 2);grid-column:7/13;position:relative;aspect-ratio:1/.86;overflow:hidden} /* --cx = the page grid line inside the map (col 10 desktop, centre line mobile) */
 .hq__map .in{display:grid;place-items:center}
-.hq__rings{position:absolute;left:50%;top:50%;width:min(88%,560px);aspect-ratio:1;transform:translate(-50%,-50%)}
+.hq__rings{position:absolute;left:var(--cx);top:50%;width:min(88%,560px);aspect-ratio:1;transform:translate(-50%,-50%)}
 .hq__rings svg{width:100%;height:100%;overflow:visible}
 .hq__pin{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:14px}
 .hq__pin i{position:relative;width:14px;height:14px;border-radius:50%;background:var(--signal)}
@@ -267,6 +267,10 @@
   .form__end .btn{width:100%;justify-content:center}
   .hq__rows b{font-size:20px}
 }
+@media (max-width:560px){
+  .hq__map{aspect-ratio:auto;height:clamp(420px,118vw,520px)}
+  .hq__tag--t{top:24px}.hq__tag--b{bottom:24px}
+}
 @media (max-width:400px){
   .fact__v{font-size:40px}
   .phero__ctas .btn{font-size:13px;gap:5px}
@@ -289,9 +293,9 @@
 /* map: pin sits exactly on the crossing of the two axis lines */
 .hq__map .in{position:relative}
 .hq__map .in::before,.hq__map .in::after{content:"";position:absolute;background:var(--line);pointer-events:none}
-.hq__map .in::before{left:50%;top:0;bottom:0;width:1px;margin-left:-.5px}
+.hq__map .in::before{left:var(--cx);top:0;bottom:0;width:1px;margin-left:-.5px}
 .hq__map .in::after{top:50%;left:0;right:0;height:1px;margin-top:-.5px}
-.hq__pin{position:absolute;left:50%;top:50%;width:0;height:0;z-index:2}
+.hq__pin{position:absolute;left:var(--cx);top:50%;width:0;height:0;z-index:2}
 .hq__pin i{position:absolute;left:-7px;top:-7px}
 .hq__pin .label{position:absolute;top:22px;left:12px;white-space:nowrap}
 

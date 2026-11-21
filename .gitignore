@@ -1,0 +1,8 @@
+# local tooling
+.vercel/
+.DS_Store
+*.log
+__pycache__/
+
+# design-review screenshots & retired files (large, not part of the site)
+assets/ref/
